@@ -1,7 +1,28 @@
+import { useContext } from "react";
+import FavoriteMemmbersContext from "../../store/favorites-context";
+
 import Card from "../Layout/Card";
 import classes from "./MemberItem.module.css";
 
 const MemberItem = (props) => {
+  const memberCtx = useContext(FavoriteMemmbersContext);
+  console.log(memberCtx);
+
+  const memberIsFavorite = memberCtx.memberIsFavorite(props.id);
+
+  const toogleFavMemberStatusHandler = () => {
+    if (memberIsFavorite) {
+      memberCtx.removeMember(props.id);
+    } else {
+      memberCtx.addMember({
+        id: props.id,
+        age: props.age,
+        photo: props.photo,
+        profession: props.profession,
+      });
+    }
+  };
+
   return (
     <Card>
       <div className={classes.container}>
@@ -12,7 +33,9 @@ const MemberItem = (props) => {
         </div>
         <h1>{props.profession}</h1>
         <div>
-          <button>To favorites</button>
+          <button onClick={toogleFavMemberStatusHandler}>
+            {memberIsFavorite ? "remove from favorites" : "to favorites"}
+          </button>
         </div>
       </div>
     </Card>

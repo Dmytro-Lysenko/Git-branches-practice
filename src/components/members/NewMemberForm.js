@@ -22,8 +22,6 @@ const NewMemberForm = (props) => {
       profession: enteredProfession,
     };
 
-    console.log(newMemberData);
-
     props.addNewMember(newMemberData);
   };
 
