@@ -1,5 +1,7 @@
+import Header from "./UI/Header";
+
 function App() {
-  return <h1>Testing project</h1>;
+  return <Header />;
 }
 
 export default App;
