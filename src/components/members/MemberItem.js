@@ -6,7 +6,6 @@ import classes from "./MemberItem.module.css";
 
 const MemberItem = (props) => {
   const memberCtx = useContext(FavoriteMemmbersContext);
-  console.log(memberCtx);
 
   const memberIsFavorite = memberCtx.memberIsFavorite(props.id);
 
