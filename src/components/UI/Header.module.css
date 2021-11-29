@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  background: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header nav {
+  flex: 3;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.6rem;
+  flex: 1;
+  margin-left: 1.5rem;
+}
+
+.header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4rem;
+}
+
+.header li {
+  list-style: none;
+}
+
+.header a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.header a:hover,
+.header a:active {
+  color: #928a8a;
+  cursor: pointer;
+}
