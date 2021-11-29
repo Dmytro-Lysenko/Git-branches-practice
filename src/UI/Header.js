@@ -1,6 +1,8 @@
+import classes from "./Header.module.css";
+
 const Header = () => {
   return (
-    <div>
+    <div className={classes.header}>
       <ul>
         <li>All members</li>
         <li>Favorite members</li>
