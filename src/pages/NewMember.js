@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import NewMemberForm from "../components/members/NewMemberForm";
+import classes from "./NewMember.module.css";
 
 const NewMember = () => {
   let navigate = useNavigate();
@@ -20,8 +21,8 @@ const NewMember = () => {
   };
 
   return (
-    <section>
-      <h1>New members</h1>
+    <section className={classes.main}>
+      <h1 className={classes.title}>New members</h1>
       <NewMemberForm addNewMember={addNewMemberHandler} />
     </section>
   );

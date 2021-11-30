@@ -22,17 +22,16 @@ const MemberItem = (props) => {
     }
   };
 
-  
   return (
     <Card>
       <div className={classes.container}>
-        <h2>{props.name}</h2>
-        <h1>{props.age}</h1>
         <div className={classes.image}>
           <img src={props.photo} alt={props.name} />
         </div>
-        <h1>{props.profession}</h1>
-        <div>
+        <h2>Name: {props.name}</h2>
+        <h1 className={classes.age}> Age: {props.age}</h1>
+        <h1>Position: {props.profession}</h1>
+        <div className={classes.actions}>
           <button onClick={toogleFavMemberStatusHandler}>
             {memberIsFavorite ? "remove from favorites" : "to favorites"}
           </button>

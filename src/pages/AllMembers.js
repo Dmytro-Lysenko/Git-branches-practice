@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import AllMembersContext from "../store/allmembers-context";
 
 import MemberList from "../components/members/MemberList";
+import classes from "./AllMembers.module.css";
 
 const AllMembers = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -56,8 +57,8 @@ const AllMembers = (props) => {
   }
 
   return (
-    <section>
-      <h1>All the members</h1>
+    <section className={classes.main}>
+      <h1 className={classes.title}>All the members</h1>
       <MemberList onDel={deleteMemberHandler} guests={loadedMembers} />
     </section>
   );

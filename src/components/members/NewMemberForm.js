@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Card from "../Layout/Card";
+import classes from "./NewMemberForm.module.css";
 
 const NewMemberForm = (props) => {
   const nameInputRef = useRef();
@@ -26,25 +27,25 @@ const NewMemberForm = (props) => {
   };
 
   return (
-    <Card>
-      <form onSubmit={submitHandler}>
-        <div>
+    <Card className={classes.test}>
+      <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes.control}>
           <label htmlFor="name">Name of Member</label>
           <input type="text" id="name" ref={nameInputRef} />
         </div>
-        <div>
-          <label htmlFor="age">AGe of Member</label>
+        <div className={classes.control}>
+          <label htmlFor="age">Age of Member</label>
           <input type="number" id="age" ref={ageInputRef} />
         </div>
-        <div>
+        <div className={classes.control}>
           <label htmlFor="photo">Photo of Member</label>
           <input type="url" id="photo" ref={photoInputRef} />
         </div>
-        <div>
+        <div className={classes.control}>
           <label htmlFor="professi0n">Profession of Member</label>
           <input type="text" id="profession" ref={professionInputRef} />
         </div>
-        <div>
+        <div className={classes.actions}>
           <button>Add member</button>
         </div>
       </form>
