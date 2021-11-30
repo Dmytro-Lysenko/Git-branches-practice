@@ -30,16 +30,21 @@ const AllMembers = (props) => {
 
         setIsLoading(false);
         setLoeadedMembers(members);
-        console.log(members);
       });
   }, []);
-
+  console.log(loadedMembers);
   const deleteMemberHandler = (memberId) => {
-    const updatedLoadedMembers = loadedMembers.filter(
+    // Managing data by lifting state up with functions and useState
+    // const updatedLoadedMembers = loadedMembers.filter(
+    //   (member) => member.id !== memberId
+    // );
+    // setLoeadedMembers(updatedLoadedMembers);
+
+    //Managing data by using allMembers context
+    allMemberCtx.allMembers = loadedMembers.filter(
       (member) => member.id !== memberId
     );
-    setLoeadedMembers(updatedLoadedMembers);
-    return console.log(updatedLoadedMembers);
+    setLoeadedMembers(allMemberCtx.allMembers);
   };
 
   if (isLoading) {
