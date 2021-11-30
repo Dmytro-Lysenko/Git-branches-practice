@@ -4,7 +4,7 @@ import classes from "./Header.module.css";
 const Header = () => {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>React Meetups</div>
+      <div className={classes.logo}>Some meetup</div>
       <nav>
         <ul>
           <li>

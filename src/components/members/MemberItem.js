@@ -22,6 +22,7 @@ const MemberItem = (props) => {
     }
   };
 
+  
   return (
     <Card>
       <div className={classes.container}>
@@ -35,6 +36,7 @@ const MemberItem = (props) => {
           <button onClick={toogleFavMemberStatusHandler}>
             {memberIsFavorite ? "remove from favorites" : "to favorites"}
           </button>
+          <button onClick={() => props.onDel(props.id)}>Remove</button>
         </div>
       </div>
     </Card>

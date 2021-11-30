@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import AllMembersContext from "../store/allmembers-context";
 
 import MemberList from "../components/members/MemberList";
-
 
 const AllMembers = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadedMembers, setLoeadedMembers] = useState([]);
+  const allMemberCtx = useContext(AllMembersContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,8 +30,17 @@ const AllMembers = (props) => {
 
         setIsLoading(false);
         setLoeadedMembers(members);
+        console.log(members);
       });
   }, []);
+
+  const deleteMemberHandler = (memberId) => {
+    const updatedLoadedMembers = loadedMembers.filter(
+      (member) => member.id !== memberId
+    );
+    setLoeadedMembers(updatedLoadedMembers);
+    return console.log(updatedLoadedMembers);
+  };
 
   if (isLoading) {
     return (
@@ -43,7 +53,7 @@ const AllMembers = (props) => {
   return (
     <section>
       <h1>All the members</h1>
-      <MemberList guests={loadedMembers} />
+      <MemberList onDel={deleteMemberHandler} guests={loadedMembers} />
     </section>
   );
 };
